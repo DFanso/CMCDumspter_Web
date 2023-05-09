@@ -19,7 +19,7 @@ function Article() {
                     municipal, industrial and agricultural waste, wastewater and
                     nutrient run-off, and from power generation.
                 </p>
-                <p id="author">- CMC Secretary</p>
+                <p id="author">- CMC Admin</p>
                 </div>
                 <div class="article">
                 <h1>Landfill Sites</h1>
@@ -33,7 +33,7 @@ function Article() {
                     challenge that government and all of society must work together to
                     address.
                 </p>
-                <p id="author">- CMC Secretary</p>
+                <p id="author">- CMC Admin</p>
                 </div>
                 <div class="article">
                 <h1>Sewage Treatment</h1>
@@ -46,7 +46,7 @@ function Article() {
                     and financing, can sustainably utilize wastewater, which represents
                     a widely available and valuable resource.
                 </p>
-                <p id="author">- CMC Secretary</p>
+                <p id="author">- CMC Admin</p>
                 </div>
             </div>
             <div class="map">

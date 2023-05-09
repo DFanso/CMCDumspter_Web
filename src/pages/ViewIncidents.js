@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 // Images
 import indexPic1 from '../images/indexPic1.jpg';
 import indexPic2 from '../images/indexPic2.jpg';
-import indexPic3 from '../images/indexPic3.jpg';
 import indexPic4 from '../images/indexPic4.jpg';
 
 function ViewIncidents() {
