@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../components/Header';
+import { UserIcon } from '@heroicons/react/24/solid'
 import '../css/style.css'
 import Footer from '../components/Footer';
 import Popup from '../components/Popup';
@@ -7,6 +7,7 @@ import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton } from '@mui/material';
 import indexPic1 from '../images/indexPic1.jpg';
+import { Link } from 'react-router-dom'
 
 function Report() {
     const [showPopup, setShowPopup] = useState(false);
@@ -27,7 +28,18 @@ function Report() {
 
     return (
         <div>
-            <Header />
+            <header>
+                <div class="navbar">
+                    <div class="logo">
+                        <Link to="/">CMC<font color="white">Dumpster</font></Link>
+                    </div>
+                    <ul class="links">
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/report">Report Form</Link></li>
+                    </ul>
+                    <Link to="/user-profile"><UserIcon id='headerUserIcon' color='white' width='1.2rem' style={{ marginLeft: '10' }} /></Link>
+                </div>
+            </header>
             <div class="report">
                 <h1 id='reportCaption'>REPORT INCIDENT</h1>
                 <button class="link1" type="button" name="submit" id="submit" onClick={submitButtonClick}>

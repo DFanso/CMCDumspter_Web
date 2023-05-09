@@ -1,14 +1,59 @@
 import React from 'react'
 import '../css/style.css'
-import Header from '../components/Header'
+import { UserIcon } from '@heroicons/react/24/solid'
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 function AddGarbageSpot() {
+
+    const [form, setForm] = useState({
+        name: '',
+        address: ''
+    });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setForm((prevForm) => ({
+            ...prevForm,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (event) => {
+        if (form.name === '') {
+            alert('Name is required');
+            return;
+        }
+        if (form.address === '') {
+            alert('Address is required');
+            return;
+        }
+
+        // Handle form submission
+        console.log('Form submitted:', form);
+        alert('Garbage Spot Added Successfully');
+    };
+
     return (
         <div>
-            <Header />
+            <header>
+                <div class="navbar">
+                    <div class="logo">
+                        <Link to="/">CMC<font color="white">Dumpster</font></Link>
+                    </div>
+                    <ul class="links">
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/create-user">Create User</Link></li>
+                        <li><Link to="/add-article">Add Article</Link></li>
+                        <li><Link to="/add-garbage-spot">Add Garbage Spot</Link></li>
+                    </ul>
+
+                    <Link to="/user-profile"><UserIcon id='headerUserIcon' color='white' width='1.2rem' style={{ marginLeft: '10' }} /></Link>
+                </div>
+            </header>
             <div class="spot">
-                <form action="#" name="spotForm" id="spotForm">
+                <form action="#" name="spotForm" id="spotForm" onSubmit={handleSubmit}>
                     <div class="spotSections">
                         <div class="sectionOne">
                             <h1>ADD GARBAGE SPOT</h1>
@@ -17,12 +62,16 @@ function AddGarbageSpot() {
                                 type="text"
                                 name="name"
                                 placeholder="Incident Name"
+                                value={form.name} 
+                                onChange={handleChange}
                             />
                             <input
                                 id="address"
                                 type="text"
                                 name="address"
                                 placeholder="Address"
+                                value={form.address}
+                                onChange={handleChange}
                             />
                             <input
                                 id="description"

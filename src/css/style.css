@@ -130,7 +130,7 @@ footer {
   background: url("../images/loginCover.jpg");
   background-size: cover;
   position: relative;
-  height: 62vw;
+  height: 65vw;
   width: 100%;
   background-position: center center;
 }
@@ -142,7 +142,7 @@ footer {
   transform: translate(-50%, -50%);
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   width: 30vw;
-  height: 40vw;
+  height: 37vw;
   padding: 2vw;
   border-radius: 3vw;
   box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.5);
@@ -177,6 +177,9 @@ footer {
 /* .userOptions .btn:hover {
   background: #350f00;
 } */
+.login #label1{
+  margin-top: 2.5vw;
+}
 
 .login .label label {
   font-size: 1.5vw;
@@ -277,6 +280,12 @@ p {
 
 .btnResetPassword:hover {
   transform: scale(1.1);
+}
+
+.varifyClass {
+  width: 25vw;
+  height: 20vw;
+  text-align: center;
 }
 
 /* Index / Home Page */
@@ -673,7 +682,7 @@ p {
   background: url("../images/newsCover.jpg");
   background-size: cover;
   position: relative;
-  height: 90vw;
+  height: 60vw;
   width: 100%;
   background-position: center center;
 }
@@ -691,7 +700,7 @@ p {
   padding: 3vw;
   border-radius: 2vw;
   margin: 2vw;
-  margin-top: 5vw;
+  margin-top: 10vw;
   box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -927,7 +936,7 @@ p {
 }
 
 .spot input {
-  background: #b7b2b2;
+  background: #868383;
   border: 0;
   border-radius: 1vw;
   margin: 0.5vw;
@@ -967,7 +976,7 @@ p {
 }
 
 .addSpotBtn:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .sectionTwo iframe {

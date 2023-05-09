@@ -4,7 +4,7 @@ import { UserIcon } from '@heroicons/react/24/solid'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 
-function CaptainDashboard() {
+function StaffDashboard() {
     return (
         <div>
             <header>
@@ -14,15 +14,15 @@ function CaptainDashboard() {
                     </div>
                     <ul class="links">
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/view-incidents">View Incidents</Link></li>
+                        <li><Link to="/report">Report Form</Link></li>
                     </ul>
                     <Link to="/user-profile"><UserIcon id='headerUserIcon' color='white' width='1.2rem' style={{ marginLeft: '10' }} /></Link>
                 </div>
             </header>
             <div class="captainDashboard">
-                <h1>GREEN CAPTAIN DASHBOARD</h1>
+                <h1>GREEN TASK FORCE DASHBOARD</h1>
                 <div class="link1">
-                    <Link to="/view-incidents" id="link1">View Incidents</Link>
+                    <Link to="/report" id="link1">Report Form</Link>
                 </div>
             </div>
             <Footer />
@@ -30,4 +30,4 @@ function CaptainDashboard() {
     )
 }
 
-export default CaptainDashboard
+export default StaffDashboard

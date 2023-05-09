@@ -8,6 +8,7 @@ import indexPic1 from '../images/indexPic1.jpg';
 import indexPic2 from '../images/indexPic2.jpg';
 import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.css';
+import MainHeader from '../components/MainHeader';
 
 SwiperCore.use([Autoplay]);
 
@@ -15,7 +16,7 @@ function Home() {
   const swiperRef = useRef(null);
   return (
     <div>
-      <Header />
+      <MainHeader />
       <Swiper 
         loop={true}
         autoplay={{

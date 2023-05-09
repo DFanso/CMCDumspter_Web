@@ -1,14 +1,11 @@
 import React from 'react'
 import '../css/style.css'
-import Home from '../pages/Home'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Popup from '../components/Popup';
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function LoginStaff() {
     const navigate = useNavigate();
     const [forgotPassword, setforgotPassword] = useState(false);
     const [verify, setVerify] = useState(false);
@@ -22,7 +19,7 @@ function Login() {
     };
 
     const [form, setForm] = useState({
-        role: 'admin',
+        role: 'staff',
         username: '',
         password: ''
     });
@@ -64,25 +61,24 @@ function Login() {
 
         // Handle form submission
         console.log('Form submitted:', form);
-        alert('Login Successful');
-        
-        // Navigate to the home page
-        navigate('/');
+        alert('Staff Login Successful');
+
+        // Navigate to the admin dashboard
+        navigate('/staff-dashboard');
     };
 
     return (
         <div>
-            <Header />
             <div class="loginSection">
                 <div class="login">
                     <form action="#" name="loginForm" id="loginForm" onSubmit={handleSubmit}>
                         <h1>LOGIN</h1>
-                        <select name="role" value={form.role} onChange={handleChange} style={{ width: '7vw', height: '3vw', borderRadius: '1vw', backgroundColor: '#694c40', color: 'white', padding: '0.5vw', margin: '1vw', fontSize: '1.2vw', appearance: 'button' }}>
+                        {/* <select name="role" value={form.role} onChange={handleChange} style={{ width: '7vw', height: '3vw', borderRadius: '1vw', backgroundColor: '#694c40', color: 'white', padding: '0.5vw', margin: '1vw', fontSize: '1.2vw', appearance: 'button' }}>
                             <option id='btnAdmin' value="admin">Admin</option>
                             <option id='btnGCap' value="gcap">GCap</option>
                             <option id='btnGTF' value="gtf">GTF</option>
-                        </select>
-                        <div class="label">
+                        </select> */}
+                        <div class="label" id='label1'>
                             <label for="username">Enter Username</label> <br />
                             <input type="text" name="username" id="username" placeholder="Enter username" value={form.username} onChange={handleChange} />
                         </div>
@@ -128,9 +124,8 @@ function Login() {
                     </div>
                 </Popup>
             )}
-            <Footer />
         </div>
     )
 }
 
-export default Login
+export default LoginStaff
