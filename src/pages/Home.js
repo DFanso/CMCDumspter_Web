@@ -1,45 +1,51 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Header from '../components/Header'
 import '../css/style.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
-
-// images
+import Footer from '../components/Footer';
 import indexPic1 from '../images/indexPic1.jpg';
 import indexPic2 from '../images/indexPic2.jpg';
-import indexPic3 from '../images/indexPic3.jpg';
-import indexPic4 from '../images/indexPic4.jpg';
-import Footer from '../components/Footer';
+import SwiperCore, { Autoplay } from 'swiper';
+import 'swiper/swiper-bundle.css';
 
-
+SwiperCore.use([Autoplay]);
 
 function Home() {
+  const swiperRef = useRef(null);
   return (
     <div>
       <Header />
-      <Swiper navigation pagination >
+      <Swiper 
+        loop={true}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: false
+        }}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+      >
         <SwiperSlide className='slide'>
-          <img src={indexPic1} className='image' alt='hello' />
+          <img src={indexPic1} className='image' alt='image 1' />
           <div className='caption'>
             <span class="text">Optimizing Garbage Collection</span>
           </div>
         </SwiperSlide>
         <SwiperSlide className='slide'>
-          <img src={indexPic2} width={'100%'} alt='there' />
+          <img src={indexPic2} width={'100%'} alt='image 2' />
           <div className='caption'>
-          <span class="text">Green Task Force As Volunteers</span>
+            <span class="text">Green Task Force As Volunteers</span>
           </div>
         </SwiperSlide>
         <SwiperSlide className='slide'>
-          <img src={indexPic3} width={'100%'} alt='adoo' />
+          <img src={'https://images.pexels.com/photos/4171694/pexels-photo-4171694.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'} width={'100%'} alt='image 3' />
           <div className='caption'>
             <span class="text">News & Articles for Public Knowledge</span>
           </div>
         </SwiperSlide>
         <SwiperSlide className='slide'>
-          <img src={indexPic4} width={'100%'} alt='adoo' />
+          <img src={'https://images.pexels.com/photos/2382894/pexels-photo-2382894.jpeg'} width={'100%'} alt='image 4' />
           <div className='caption'>
-          <span class="text">Indicents are being reported</span>
+            <span class="text">Incidents are being reported</span>
           </div>
         </SwiperSlide>
       </Swiper>

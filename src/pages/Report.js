@@ -29,7 +29,7 @@ function Report() {
         <div>
             <Header />
             <div class="report">
-                <h1 style={{ fontSize: '4rem' }}>REPORT INCIDENT</h1>
+                <h1 id='reportCaption'>REPORT INCIDENT</h1>
                 <button class="link1" type="button" name="submit" id="submit" onClick={submitButtonClick}>
                     ADD
                 </button>
@@ -128,14 +128,14 @@ function Report() {
                         <p className='updateContent'>Search Incident</p>
                         <div className='updateSection'>
                             <div className='searchBar'>
-                                <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
-                                <IconButton type="button" sx={{ p: 1 }}>
-                                    <SearchIcon />
+                                <InputBase sx={{ ml: 2, flex: 1, fontSize: "1.5vw" }} placeholder="Search" />
+                                <IconButton type="button" sx={{ p: 1}}>
+                                    <SearchIcon sx={{ width: '2vw', height: '2vw' }} />
                                 </IconButton>
                             </div>
                             <div className='btnUpdateContainer'>
-                                <button id='updateBtn' className='btnReport' style={{ width: 120 }} type="button">Update</button>
-                                <button id='updateClose' className='btnReport' style={{ width: 100 }} onClick={() => setShowUpdate(false)}>Close</button>
+                                <button id='updateBtn' className='btnReportUpdate' style={{ width: 120 }} type="button">Update</button>
+                                <button id='updateClose' className='btnReportUpdate' style={{ width: 100 }} onClick={() => setShowUpdate(false)}>Close</button>
                             </div>
                         </div>
 
@@ -144,9 +144,9 @@ function Report() {
                             <p>Incident Address</p>
                             <div id='desInc'>
                                 <p id='incD'>Incident Description</p>
-                                <div style={{display:'flex', flexDirection:'column', height:'9rem'}}>
+                                <div id='incD-img'>
                                     <img src={indexPic1} />
-                                    <input type='file' style={{margin:'0rem', marginLeft:'3rem'}}/>
+                                    <input id='incD-input' type='file' />
                                 </div>                                
                             </div>                            
                             <iframe
@@ -167,14 +167,14 @@ function Report() {
                     <div className='deletePopup'>
                         <p className='deleteContent'>Search Incident</p>
                         <div className='dltSearchBar'>
-                            <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
+                            <InputBase sx={{ ml: 2, flex: 1, fontSize: "1.5vw" }} placeholder="Search" />
                             <IconButton type="button" sx={{ p: 1 }}>
-                                <SearchIcon />
+                                <SearchIcon sx={{ width: '2vw', height: '2vw' }} />
                             </IconButton>
                         </div>
                         <div className='btnDeleteContainer'>
-                            <button id='deleteBtn' className='btnReport' style={{ width: 120 }} type="button">Delete</button>
-                            <button id='deleteClose' className='btnReport' style={{ width: 100 }} onClick={() => setShowDelete(false)}>Close</button>
+                            <button id='deleteBtn' className='btnReportDlt' style={{ width: 120 }} type="button">Delete</button>
+                            <button id='deleteClose' className='btnReportDlt' style={{ width: 100 }} onClick={() => setShowDelete(false)}>Close</button>
                         </div>
                     </div>
                 </Popup>
