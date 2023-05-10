@@ -26,6 +26,52 @@ function Report() {
         setShowDelete(true);
     };
 
+    const [form, setForm] = useState({
+        incidentName: '', 
+        address: '',
+        description: '',
+        file: ''
+    });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setForm((prevForm) => ({
+            ...prevForm,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (form.incidentName === '') {
+            alert('Incident Name is required');
+            document.querySelector('input[name="incidentName"]').focus();
+            return;
+        }
+        if (form.address === '') {
+            alert('Address is required');
+            document.querySelector('input[name="address"]').focus();
+            return;
+        }
+        if (form.description === '') {
+            alert('Description is required');
+            document.querySelector('input[name="description"]').focus();
+            return;
+        }
+
+        // Handle form submission
+        console.log('Form submitted:', form);
+        alert('Report form submitted successfully');
+
+        // Clear the form
+        setForm({
+            incidentName: '',
+            address: '',
+            description: '',
+            file: ''
+        });
+    };
+
     return (
         <div>
             <header>
@@ -50,72 +96,22 @@ function Report() {
                 </button>
                 <button class="link1" type="button" name="delete" id="delete" onClick={deleteButtonClick}>
                     DELETE
-                </button>
-                {/* <form action="#" name="reportForm" id="reportForm">
-                <div class="reportSections">
-                <div class="sectionOne">
-                    <h1>REPORT INCIDENT</h1>
-                    <input
-                    id="name"
-                    type="text"
-                    name="name"
-                    placeholder="Incident Name"
-                    />
-                    <input
-                    id="address"
-                    type="text"
-                    name="address"
-                    placeholder="Address"
-                    />
-                    <input
-                    id="description"
-                    type="text"
-                    name="description"
-                    placeholder="Description"
-                    />
-                    <br />
-                    <input type="file" id="addImage" name="addImage"/>
-                </div>
-                <div class="sectionTwo">
-                    <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.575840369662!2d80.03899797468854!3d6.821329093176445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2523b05555555%3A0x546c34cd99f6f488!2sNSBM%20Green%20University!5e0!3m2!1sen!2slk!4v1683098642267!5m2!1sen!2slk"
-                    width="600"
-                    height="450"
-                    style={{border: 0}}
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                </div>
-                </div>
-
-                <div class="reportBtns">
-                <button class="btnReport" type="submit" name="submit" id="submit">
-                    ADD
-                </button>
-                <button class="btnReport" type="button" name="update" id="update" onClick={handleButtonClick}>
-                    UPDATE
-                </button>
-                <button class="btnReport" type="button" name="delete" id="delete">
-                    DELETE
-                </button>
-                </div>
-            </form> */}
+                </button>                
             </div>
             {showPopup && (
                 <Popup>
-                    <form className='popUpForm'>
+                    <form className='popUpForm' onSubmit={handleSubmit}>
                         <label className='popUpLabel' htmlFor="incidentName">Incident Name:</label>
-                        <input className='popUpInput' type="text" id="incidentName" name="incidentName" placeholder='Enter Incident Name' required />
+                        <input className='popUpInput' type="text" id="incidentName" name="incidentName" placeholder='Enter Incident Name' value={form.incidentName} onChange={handleChange} />
 
                         <label className='popUpLabel' htmlFor="address">Address:</label>
-                        <input className='popUpInput' type="text" id="address" name="address" placeholder='Enter Address' required />
+                        <input className='popUpInput' type="text" id="address" name="address" placeholder='Enter Address' value={form.address} onChange={handleChange} />
 
                         <label className='popUpLabel' htmlFor="description">Description:</label>
-                        <textarea className='popUpInputDescription' id="description" name="description" placeholder='Enter Description' required></textarea>
+                        <input className='popUpInputDescription' id="description" name="description" placeholder='Enter Description' value={form.description} onChange={handleChange} />
 
                         <label className='popUpLabel' htmlFor="images">Upload Images:</label>
-                        <input type="file" id="images" name="images" multiple />
+                        <input type="file" id="images" name="file" multiple value={form.file} onChange={handleChange} />
 
                         <div className='btnReportContainer'>
                             <button id='addSubmit' className='btnReport' style={{ width: 300 }} type="submit">Submit</button>

@@ -99,7 +99,7 @@ function AddGarbageSpot() {
                                 value={form.description}
                                 onChange={handleChange}
                             />
-                            <input type="file" id="addFile" name="file" value={form.file} onChange={handleChange} />
+                            <input type="file" id="addFile" name="file" value={form.file} onChange={handleChange} multiple/>
                             <button class="addSpotBtn" type="submit" name="addSpotBtn" id="addSpotBtn">
                                 ADD
                             </button>
