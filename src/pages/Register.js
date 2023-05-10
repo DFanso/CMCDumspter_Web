@@ -29,70 +29,92 @@ function Register() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const textRegex = /^[a-zA-Z]+$/;
+        const noRegex = /^[0-9]{10}$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const pwRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"?><,./;'[\]\\|=-]).{8,}$/;
 
         // Perform validation on form data
         if (form.name === '') {
             alert('Name is required');
+            document.querySelector('input[name="name"]').focus();
             return;
         }
         else if (!textRegex.test(form.name)) {
             alert('Name should contain letters');
+            document.querySelector('input[name="name"]').focus();
             return;
         }
         if (form.no === '') {
             alert('Contact No is required');
+            document.querySelector('input[name="no"]').focus();
             return;
         }
-        else if (!(form.no.length === 10)) {
+        else if (!noRegex.test(form.no)) {
             alert('Contact No should be 10 digits');
+            document.querySelector('input[name="no"]').focus();
             return;
-        }        
-        else if (isNaN(form.no)) {
-            alert('Contact No should contain digits');
-            return;
-        }
+        }   
         if (form.email === '') {
             alert('Email is required');
+            document.querySelector('input[name="email"]').focus();
             return;
         }
         else if (!emailRegex.test(form.email)) {
             alert('Email is not valid');
+            document.querySelector('input[name="email"]').focus();
             return;
         }
         if (form.address === '') {
             alert('Address is required');
+            document.querySelector('input[name="address"]').focus();
             return;
         }
         if (form.username === '') {
             alert('Username is required');
+            document.querySelector('input[name="username"]').focus();
             return;
         }
         if (form.password === '') {
             alert('Password is required');
+            document.querySelector('input[name="password"]').focus();
             return;
         }
         else if (form.password.length < 6) {
             alert('Password should be more than 6 characters');
+            document.querySelector('input[name="password"]').focus();
             return;
         }
         else if (!pwRegex.test(form.password)) {
             alert('Password is not valid');
+            document.querySelector('input[name="password"]').focus();
             return;
         }
         if (form.confirmPassword === '') {
             alert('Confirm Password is required');
+            document.querySelector('input[name="confirmPassword"]').focus();
             return;
         }
         else if (form.password !== form.confirmPassword) {
             alert('Password does not match');
+            document.querySelector('input[name="confirmPassword"]').focus();
             return;
         }
 
         // Handle form submission
         console.log('Form submitted:', form);
         alert('Registered Successfully');
+
+        // Clear the form
+        setForm({
+            name: '',
+            no: '',
+            email: '',
+            address: '',
+            role: 'admin',
+            username: '',
+            password: '',
+            confirmPassword: ''
+        });
     };
 
     return (

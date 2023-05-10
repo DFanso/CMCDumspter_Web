@@ -38,25 +38,36 @@ function LoginAdmin() {
         // Perform validation on form data
         if (form.username === '') {
             alert('Username is required');
+            document.querySelector('input[name="username"]').focus();
             return;
         }
         if (form.password === '') {
             alert('Password is required');
+            document.querySelector('input[name="password"]').focus();
             return;
         }
         if (form.password.length < 6) {
             alert('Password should be more than 6 characters');
+            document.querySelector('input[name="password"]').focus();
             return;
         }
         const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"?><,./;'[\]\\|=-]).{8,}$/;
         if (!regex.test(form.password)) {
             alert('Password is not valid');
+            document.querySelector('input[name="password"]').focus();
             return;
         }
 
         // Handle form submission
         console.log('Form submitted:', form);
         alert('Admin Login Successful');
+
+        // Clear the form
+        setForm({
+            role: 'admin',
+            username: '',
+            password: ''
+        });
 
         // Navigate to the admin dashboard
         navigate('/admin-dashboard');
