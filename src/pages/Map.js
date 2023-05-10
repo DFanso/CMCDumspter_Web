@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/style.css'
 import Footer from '../components/Footer';
-import Header from '../components/Header';
+import { Link } from 'react-router-dom'
 // import { GoogleMap } from 'google-maps-react-markers/dist/google-map';
 // import { useRef, useState } from 'react';
 // import { Marker } from 'google-maps-react';
@@ -22,7 +22,18 @@ function Map() {
 
   return (
     <div>
-      <Header />
+      <header>
+        <div class="navbar">
+          <div class="logo">
+            <Link to="/">CMC<font color="white">Dumpster</font></Link>
+          </div>
+          <ul class="links" style={{ alignItems: 'right' }}>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/map">Incident Map</Link></li>
+            <li><Link to="/article">News & Articles</Link></li>
+          </ul>
+        </div>
+      </header>
       <div class="staffMap">
         <div class="mapSection">
           <iframe

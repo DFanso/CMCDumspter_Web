@@ -14,6 +14,10 @@ import CaptainDashboard from './pages/CaptainDashboard';
 import ViewIncidents from './pages/ViewIncidents';
 import IncidentDetail from './pages/IncidentDetail';
 import Register from './pages/Register';
+import LoginAdmin from './pages/LoginAdmin';
+import LoginGCap from './pages/LoginGCap';
+import LoginStaff from './pages/LoginStaff';
+import StaffDashboard from './pages/StaffDashboard';
 
 function App() {
   return (
@@ -33,6 +37,10 @@ function App() {
         <Route path="/view-incidents" element={<ViewIncidents/>} />
         <Route path="/incident-details" element={<IncidentDetail/>} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/login-Admin" element={<LoginAdmin />} />
+        <Route path="/login-GCap" element={<LoginGCap />} />
+        <Route path="/login-Staff" element={<LoginStaff />} />
+        <Route path="/staff-dashboard" element={<StaffDashboard />} />
       </Routes>
     </Router>
   );

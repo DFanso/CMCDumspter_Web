@@ -1,13 +1,25 @@
 import React from 'react'
 import '../css/style.css'
-import Header from '../components/Header'
+import { UserIcon } from '@heroicons/react/24/solid'
 import Footer from '../components/Footer'
 import indexPic4 from '../images/indexPic4.jpg';
+import { Link } from 'react-router-dom'
 
 function IncidentDetail() {
     return (
         <div>
-            <Header />
+            <header>
+                <div class="navbar">
+                    <div class="logo">
+                        <Link to="/">CMC<font color="white">Dumpster</font></Link>
+                    </div>
+                    <ul class="links">
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/view-incidents">View Incidents</Link></li>
+                    </ul>
+                    <Link to="/user-profile"><UserIcon id='headerUserIcon' color='white' width='1.2rem' style={{ marginLeft: '10' }} /></Link>
+                </div>
+            </header>
             <div class="viewIncidentDetails">
                 <div class="incidentDetailSection">
                     <div class="incidents">

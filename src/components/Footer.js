@@ -16,8 +16,7 @@ function Footer() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/map">Map</Link></li>
             <li><Link to="/article">News & Articles</Link></li>
-            <li><Link to="/report">Report Form</Link></li>
-            <li><Link to="/user-profile">User Profile</Link></li>
+            <li><Link to="/login-Staff">Login/Register</Link></li>
           </ul>
         </div>
         <div class="col section3">

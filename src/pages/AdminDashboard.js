@@ -1,28 +1,42 @@
 import React from 'react'
 import '../css/style.css'
-import Header from '../components/Header'
+import { UserIcon } from '@heroicons/react/24/solid'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 
 function AdminDashboard() {
-  return (
-    <div>
-        <Header />
-        <div class="adminDashboard">
-            <h1>ADMIN DASHBOARD</h1>
-            <div class="link1">
-                <Link to="/create-user" id="link1">Create User Account</Link>
+    return (
+        <div>
+            <header>
+                <div class="navbar">
+                    <div class="logo">
+                        <Link to="/">CMC<font color="white">Dumpster</font></Link>
+                    </div>
+                    <ul class="links">
+                        <li><Link to="/">Home</Link></li>                        
+                        <li><Link to="/create-user">Create User</Link></li>
+                        <li><Link to="/add-article">Add Article</Link></li>
+                        <li><Link to="/add-garbage-spot">Add Garbage Spot</Link></li>
+                    </ul>
+
+                    <Link to="/user-profile"><UserIcon id='headerUserIcon' color='white' width='1.2rem' style={{ marginLeft: '10' }} /></Link>
+                </div>
+            </header>
+            <div class="adminDashboard">
+                <h1>ADMIN DASHBOARD</h1>
+                <div class="link1">
+                    <Link to="/create-user" id="link1">Create User Account</Link>
+                </div>
+                <div class="link1">
+                    <Link to="/add-article" id="link2">Add Article</Link>
+                </div>
+                <div class="link1">
+                    <Link to="/add-garbage-spot" id="link3">Add Garbage Spot</Link>
+                </div>
             </div>
-            <div class="link1">
-                <Link to="/add-article" id="link2">Add Article</Link>
-            </div>
-            <div class="link1">
-                <Link to="/add-garbage-spot" id="link3">Add Garbage Spot</Link>
-            </div>
+            <Footer />
         </div>
-        <Footer/>
-    </div>
-  )
+    )
 }
 
 export default AdminDashboard
