@@ -18,6 +18,9 @@ import LoginAdmin from './pages/LoginAdmin';
 import LoginGCap from './pages/LoginGCap';
 import LoginStaff from './pages/LoginStaff';
 import StaffDashboard from './pages/StaffDashboard';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetForm from './pages/ResetForm';
+import Verify from './pages/Verify';
 
 function App() {
   return (
@@ -41,6 +44,9 @@ function App() {
         <Route path="/login-GCap" element={<LoginGCap />} />
         <Route path="/login-Staff" element={<LoginStaff />} />
         <Route path="/staff-dashboard" element={<StaffDashboard />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-form" element={<ResetForm />} />
+        <Route path="/verify" element={<Verify />} />
       </Routes>
     </Router>
   );

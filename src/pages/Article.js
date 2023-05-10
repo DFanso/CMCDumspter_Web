@@ -36,7 +36,6 @@ function Article() {
                             </div>
                         )}
                     </div>
-
                 </div>
             </header>
             <div class="news">
@@ -96,6 +95,7 @@ function Article() {
             </div>
             <Footer />
         </div>
+        
     )
 }
 
