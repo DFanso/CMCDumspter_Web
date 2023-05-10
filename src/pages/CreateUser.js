@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../css/style.css'
 import { UserIcon } from '@heroicons/react/24/solid'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+
+
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 function CreateUser() {
+    const [toggleMenu, setToggleMenu] = useState(false);
 
     const [form, setForm] = useState({
         name: '',
@@ -41,7 +45,7 @@ function CreateUser() {
         }
         else if (!textRegex.test(form.name)) {
             alert('Name should contain letters');
-            document.querySelector('input[name="name"]').focus();            
+            document.querySelector('input[name="name"]').focus();
             return;
         }
         if (form.no === '') {
@@ -51,9 +55,9 @@ function CreateUser() {
         }
         else if (!noRegex.test(form.no)) {
             alert('Contact No should be 10 digits');
-            document.querySelector('input[name="no"]').focus();            
+            document.querySelector('input[name="no"]').focus();
             return;
-        }    
+        }
         if (form.email === '') {
             alert('Email is required');
             document.querySelector('input[name="email"]').focus();
@@ -61,7 +65,7 @@ function CreateUser() {
         }
         else if (!emailRegex.test(form.email)) {
             alert('Email is not valid');
-            document.querySelector('input[name="email"]').focus();                    
+            document.querySelector('input[name="email"]').focus();
             return;
         }
         if (form.address === '') {
@@ -80,13 +84,13 @@ function CreateUser() {
             return;
         }
         else if ((form.password).length < 6) {
-            alert('Password should be more than 6 characters');            
-            document.querySelector('input[name="password"]').focus();                    
+            alert('Password should be more than 6 characters');
+            document.querySelector('input[name="password"]').focus();
             return;
         }
         else if (!pwRegex.test(form.password)) {
             alert('Password is not valid');
-            document.querySelector('input[name="password"]').focus();            
+            document.querySelector('input[name="password"]').focus();
             return;
         }
         if (form.confirmPassword === '') {
@@ -96,7 +100,7 @@ function CreateUser() {
         }
         else if (form.password !== form.confirmPassword) {
             alert('Password does not match');
-            document.querySelector('input[name="confirmPassword"]').focus();            
+            document.querySelector('input[name="confirmPassword"]').focus();
             return;
         }
 
@@ -115,7 +119,7 @@ function CreateUser() {
             password: '',
             confirmPassword: ''
         });
-    };    
+    };
 
     return (
         <div className='body'>
@@ -131,7 +135,23 @@ function CreateUser() {
                         <li><Link to="/add-garbage-spot">Add Garbage Spot</Link></li>
                     </ul>
 
-                    <Link to="/user-profile"><UserIcon id='headerUserIcon' color='white' width='1.2rem' style={{ marginLeft: '10' }} /></Link>
+                    <Link className='userprofile-largescreen' to="/user-profile"><UserIcon id='headerUserIcon' color='white' width='1.2rem' style={{ marginLeft: '10' }} /></Link>
+                    <div class="app__navbar-smallscreen">
+                        <Link className='userprofile-smallscreen' to="/user-profile"><UserIcon id='headerUserIcon' color='white' width='1.2rem' style={{ marginLeft: '10' }} /></Link>
+                        <GiHamburgerMenu color="#fff" fontsize={27} onClick={() => setToggleMenu(true)} />
+                        {toggleMenu && (
+                            <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
+                                <AiFillCloseCircle fromSzie={27} className='overlay__close' onClick={() => setToggleMenu(false)} />
+                                <ul class="smallscreen-links">
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/create-user">Create User</Link></li>
+                                    <li><Link to="/add-article">Add Article</Link></li>
+                                    <li><Link to="/add-garbage-spot">Add Garbage Spot</Link></li>
+                                </ul>
+                            </div>
+                        )}
+
+                    </div>
                 </div>
             </header>
             <div class="createUser">
