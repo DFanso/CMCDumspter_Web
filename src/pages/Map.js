@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../css/style.css'
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom'
 
-function Map() {  
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiFillCloseCircle } from 'react-icons/ai';
+
+function Map() {
+  const [toggleMenu, setToggleMenu] = useState(false); 
   return (
     <div className='body'>
       <header>
@@ -16,8 +20,24 @@ function Map() {
             <li><Link to="/map">Incident Map</Link></li>
             <li><Link to="/article">News & Articles</Link></li>
           </ul>
+
+          <div class="app__navbar-smallscreen">
+            <GiHamburgerMenu color="#fff" fontsize={27} onClick={() => setToggleMenu(true)} />
+            {toggleMenu && (
+              <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
+                <AiFillCloseCircle fromSzie={27} className='overlay__close' onClick={() => setToggleMenu(false)} />
+                <ul class="smallscreen-links">
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/map">Incident Map</Link></li>
+                  <li><Link to="/article">News & Articles</Link></li>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </header>
+
+
       <div class="staffMap">
         <div class="mapSection">
           <iframe
@@ -28,7 +48,7 @@ function Map() {
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>          
+                ></iframe>               
         </div>
       </div>
       <Footer />

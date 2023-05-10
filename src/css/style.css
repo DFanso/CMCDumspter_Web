@@ -61,6 +61,104 @@ header a {
   cursor: pointer;
 }
 
+/**************Hamburgher menu**********************/
+.app__navbar-smallscreen {
+  display: none;
+}
+
+.app__navbar-smallscreen_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #350f00;
+  transition: .5s ease;
+
+  flex-direction: column;
+  z-index: 5;
+}
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.app__navbar-smallscreen_overlay .overlay__close {
+  font-size: 27px;
+  color: white;
+  cursor: pointer;
+
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+
+.smallscreen-links {
+  position: relative;
+  top: 25%;
+  list-style: none;
+}
+
+.smallscreen-links li {
+  margin: 0.5rem;
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+
+
+@media screen and (max-width: 650px) {
+  .userprofile-smallscreen {
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .userprofile-largescreen {
+    display: none;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .app__navbar-smallscreen {
+    display: flex;
+  }
+}
+
+
+/**************Hamburgher menu end**********************/
+
 /* Footer */
 footer {
   background-color: #1d0800;
@@ -171,6 +269,7 @@ footer {
 .login a {
   text-decoration: none;
 }
+
 /* 
 .userOptions .btn {
   border-radius: 40px;
@@ -1514,20 +1613,25 @@ p {
   .navbar .links {
     gap: 1.5rem;
   }
+
   .navBtn {
     visibility: hidden;
   }
+
   .caption span {
     font-size: 3rem;
   }
+
   .report .reportSections {
     flex-direction: row;
   }
+
   .report #reportCaption {
     font-size: 3.75rem;
     margin-bottom: 2rem;
     margin-top: 5rem;
   }
+
   .report .link1 {
     font-size: 1.5rem;
     width: 17vw;
@@ -1535,9 +1639,11 @@ p {
     padding: 0.5rem;
     margin-bottom: 1.2rem;
   }
+
   .btnReportContainer {
     height: 3.2rem;
   }
+
   #addSubmit,
   #addClose {
     font-size: 1rem;
@@ -1551,6 +1657,7 @@ p {
     width: 55vw;
     height: 55vw;
   }
+
   .btnReportContainer {
     width: 100%;
   }
@@ -1560,37 +1667,47 @@ p {
   .navbar .logo a {
     font-size: 1rem;
   }
+
   .navbar .links {
     gap: 1rem;
   }
+
   .navbar .links a {
     font-size: 0.75rem;
   }
+
   .section1 a {
     font-size: 1rem;
   }
+
   .section1 p,
   .section2 li,
   .section3 p {
     font-size: 0.75rem;
   }
+
   .section3 .socialLinks a {
     height: 20px;
     width: 20px;
     background-color: #1d0800;
   }
+
   .section3 .socialLinks a:hover {
     background-color: #1d0800;
   }
+
   .caption span {
     font-size: 2rem;
   }
+
   .about h1 {
     font-size: 2.5rem;
   }
+
   .about p {
     font-size: 1rem;
   }
+
   .report .link1 {
     font-size: 1.25rem;
     width: 17vw;
@@ -1598,18 +1715,22 @@ p {
     padding: 0.2rem;
     margin-bottom: 1.2rem;
   }
+
   .report #reportCaption {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     margin-top: 3rem;
   }
+
   .popUpForm {
     width: 60vw;
     height: 60vw;
   }
+
   .adminDashboard .link1 {
     padding: 0.5vw;
   }
+
   .captainDashboard .link1 {
     padding: 0.5vw;
   }
@@ -1620,30 +1741,38 @@ p {
     width: 60vw;
     height: 60vw;
   }
+
   .popUpLabel,
   .popUpInput,
   .popUpInputDescription,
   input[type="file"] {
     font-size: 0.75rem;
   }
+
   #loginForm {
     font-size: 1vw;
   }
+
   #registerForm {
     font-size: 1vw;
   }
+
   .adminDashboard .link1 {
     padding: 0.2vw;
   }
+
   #createForm {
     font-size: 1vw;
   }
+
   .addArticle input[type="file"] {
     height: 4.5vw;
   }
+
   #spotForm {
     font-size: 1vw;
   }
+
   .spot input[type="file"] {
     height: 4vw;
   }
@@ -1653,29 +1782,37 @@ p {
   .navbar .logo a {
     font-size: 0.75rem;
   }
+
   .navbar .links {
     gap: 0.5rem;
   }
+
   #headerUserIcon {
     width: 0.5rem;
   }
+
   .section1 p,
   .section2 li,
   .section3 p {
     font-size: 0.5rem;
   }
+
   .section3 .socialLinks a:hover {
     background-color: #1d0800;
   }
+
   .caption span {
     font-size: 1.5rem;
   }
+
   .about h1 {
     font-size: 2rem;
   }
+
   .about p {
     font-size: 0.75rem;
   }
+
   .report .link1 {
     font-size: 1rem;
     width: 17vw;
@@ -1683,16 +1820,20 @@ p {
     padding: 0.2rem;
     margin-bottom: 0.75rem;
   }
+
   .report #reportCaption {
     font-size: 1.75rem;
   }
+
   .popUpForm {
     width: 70vw;
     height: 70vw;
   }
+
   .adminDashboard .link1 {
     padding: 0vw;
   }
+
   .captainDashboard .link1 {
     padding: 0vw;
   }
@@ -1702,9 +1843,11 @@ p {
   .navbar .links a {
     font-size: 0.5rem;
   }
+
   .navbar .links {
     gap: 0.5rem;
   }
+
   .section3 .socialLinks a {
     height: 10px;
     width: 10px;
@@ -1712,12 +1855,15 @@ p {
     margin-top: 0rem;
     background-color: #1d0800;
   }
+
   .about h1 {
     font-size: 1.5rem;
   }
+
   .about p {
     font-size: 0.75rem;
   }
+
   .report .link1 {
     font-size: 0.8rem;
     width: 15vw;
@@ -1725,17 +1871,21 @@ p {
     padding: 0.2rem;
     margin-bottom: 0.75rem;
   }
+
   .report #reportCaption {
     font-size: 1.5rem;
     margin-bottom: 1.25rem;
     margin-top: 2.5rem;
   }
+
   .adminDashboard .link1 {
     padding: 0vw;
   }
+
   .addArticle {
     font-size: 1vw;
   }
+
   .captainDashboard .link1 {
     font-size: 1vw;
     padding-top: 1vw;
@@ -1746,18 +1896,23 @@ p {
   .navbar .links a {
     font-size: 0.3rem;
   }
+
   .navbar .links {
     gap: 0.2rem;
   }
+
   .caption span {
     font-size: 1rem;
   }
+
   .about h1 {
     font-size: 1rem;
   }
+
   .about p {
     font-size: 0.45rem;
   }
+
   .report .link1 {
     font-size: 0.6rem;
     width: 15vw;
@@ -1765,14 +1920,17 @@ p {
     padding: 0.25rem;
     margin-bottom: 0.5rem;
   }
+
   .report #reportCaption {
     font-size: 1rem;
     margin-bottom: 1.2rem;
   }
+
   .adminDashboard .link1 {
     font-size: 1vw;
     padding-top: 0.9vw;
   }
+
   .captainDashboard .link1 {
     font-size: 1vw;
     padding-top: 0.9vw;
