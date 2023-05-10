@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function UserProfile() {
   return (
-    <div>
+    <div className='body' id='userBody'>
       <header>
         <div class="navbar">
           <div class="logo">

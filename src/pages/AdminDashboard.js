@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function AdminDashboard() {
     return (
-        <div>
+        <div className='body'>
             <header>
                 <div class="navbar">
                     <div class="logo">

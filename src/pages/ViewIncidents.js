@@ -11,7 +11,7 @@ import indexPic4 from '../images/indexPic4.jpg';
 
 function ViewIncidents() {
     return (
-        <div>
+        <div className='body'>
             <header>
                 <div class="navbar">
                     <div class="logo">

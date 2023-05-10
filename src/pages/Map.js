@@ -2,26 +2,10 @@ import React from 'react'
 import '../css/style.css'
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom'
-// import { GoogleMap } from 'google-maps-react-markers/dist/google-map';
-// import { useRef, useState } from 'react';
-// import { Marker } from 'google-maps-react';
 
-function Map() {
-  // const mapRef = useRef(null)
-  // const [mapReady, setMapReady] = useState(false)
-
-  // const onGoogleApiLoaded = ({ map, maps }) => {
-  //   mapRef.current = map
-  //   setMapReady(true)
-  // }
-
-  // const onMarkerClick = (e, { markerId, lat, lng }) => {
-  //   console.log('This is _>', markerId)
-  //   mapRef.current.setCenter({ lat, lng })
-  // }
-
+function Map() {  
   return (
-    <div>
+    <div className='body'>
       <header>
         <div class="navbar">
           <div class="logo">
@@ -44,21 +28,7 @@ function Map() {
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-          {/* {mapReady && <div>Map is Ready. See for logs in developer console.</div>}
-          <GoogleMap
-            apiKey=""
-            defaultCenter={{ lat: 45.4046987, lng: 12.2472504 }}
-            defaultZoom={5}
-            options={mapOptions}
-            mapMinHeight="100vh"
-            onGoogleApiLoaded={onGoogleApiLoaded}
-            onChange={(map) => console.log('Map moved', map)}
-          >
-            {coordinates.map(({ lat, lng, name }, index) => (
-              <Marker key={index} lat={lat} lng={lng} markerId={name} onClick={onMarkerClick} />
-            ))}
-          </GoogleMap> */}
+                ></iframe>          
         </div>
       </div>
       <Footer />

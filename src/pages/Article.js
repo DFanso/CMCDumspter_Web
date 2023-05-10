@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 function Article() {
   return (
-    <div>
+      <div className='body'>
           <header>
               <div class="navbar">
                   <div class="logo">
