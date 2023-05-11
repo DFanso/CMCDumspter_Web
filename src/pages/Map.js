@@ -6,28 +6,17 @@ import { Link } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
+
 import MyGoogleMap from './allMarkers';
 // import { GoogleMap } from 'google-maps-react-markers/dist/google-map';
 // import { useRef, useState } from 'react';
 // import { Marker } from 'google-maps-react';
 
+
 function Map() {
-  const [toggleMenu, setToggleMenu] = useState(false);
-  // const mapRef = useRef(null)
-  // const [mapReady, setMapReady] = useState(false)
-
-  // const onGoogleApiLoaded = ({ map, maps }) => {
-  //   mapRef.current = map
-  //   setMapReady(true)
-  // }
-
-  // const onMarkerClick = (e, { markerId, lat, lng }) => {
-  //   console.log('This is _>', markerId)
-  //   mapRef.current.setCenter({ lat, lng })
-  // }
-
+  const [toggleMenu, setToggleMenu] = useState(false); 
   return (
-    <div>
+    <div className='body'>
       <header>
         <div class="navbar">
           <div class="logo">
@@ -38,7 +27,6 @@ function Map() {
             <li><Link to="/map">Incident Map</Link></li>
             <li><Link to="/article">News & Articles</Link></li>
           </ul>
-
 
           <div class="app__navbar-smallscreen">
             <GiHamburgerMenu color="#fff" fontsize={27} onClick={() => setToggleMenu(true)} />
@@ -53,9 +41,6 @@ function Map() {
               </div>
             )}
           </div>
-
-
-
         </div>
       </header>
 
@@ -87,6 +72,7 @@ function Map() {
               <Marker key={index} lat={lat} lng={lng} markerId={name} onClick={onMarkerClick} />
             ))}
           </GoogleMap> */}
+
         </div>
       </div>
       <Footer />

@@ -10,7 +10,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 function UserProfile() {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <div>
+    <div className='body' id='userBody'>
       <header>
         <div class="navbar">
           <div class="logo">

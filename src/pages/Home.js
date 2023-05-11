@@ -15,7 +15,7 @@ SwiperCore.use([Autoplay]);
 function Home() {
   const swiperRef = useRef(null);
   return (
-    <div>
+    <div className='body'>
       <MainHeader />
       <Swiper 
         loop={true}

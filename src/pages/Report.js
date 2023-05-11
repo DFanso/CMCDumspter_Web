@@ -73,7 +73,7 @@ function Report() {
     };
 
     return (
-        <div>
+        <div className='body'>
             <header>
                 <div class="navbar">
                     <div class="logo">

@@ -17,7 +17,7 @@ function ViewIncidents() {
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
-        <div>
+        <div className='body'>
             <header>
                 <div class="navbar">
                     <div class="logo">
