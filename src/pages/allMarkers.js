@@ -6,6 +6,8 @@ import {
     InfoWindow,
 } from "@react-google-maps/api";
 
+const mapAPIKey = process.env.REACT_APP_MAPAPIKEY;
+
 const containerStyle = {
     width: "100%",
     height: "100%",
@@ -15,6 +17,7 @@ const center = {
     lat: 37.7749,
     lng: -122.4194,
 };
+
 
 // Sample JSON data with coordinates and details
 const coordinatesData = [
@@ -72,7 +75,7 @@ class MyGoogleMap extends Component {
     render() {
         const { activeMarkerId } = this.state;
         return (
-            <LoadScript googleMapsApiKey={"AIzaSyCCnEOItVHsoOo4uG_iMJ3TDu97Aip1SjA"}>
+            <LoadScript googleMapsApiKey={mapAPIKey}>
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
                     {coordinatesData.map((coordinate) => (
                         <MarkerF
